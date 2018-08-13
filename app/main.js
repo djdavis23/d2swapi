@@ -1,4 +1,4 @@
-import SwapiController from "./components/swapi-controller";
+import SwapiController from "./components/swapi-controller.js";
 
 class App {
   constructor() {

@@ -1,6 +1,6 @@
 export default class Person {
 
-  construtor(p) {
+  constructor(p) {
     this.name = p.name
     this.height = p.height
     this.mass = p.mass
@@ -15,5 +15,7 @@ export default class Person {
     this.vehicles = p.vehicles
     this.starships = p.starships
     this.url = p.url
+
+    this.id = this.url
   }
 }

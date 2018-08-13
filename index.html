@@ -13,11 +13,37 @@
 <body>
   <header class="container-fluid">
     <div class="row">
-      <div id="buttons">
+      <div class="col-md-4 offset-md-4">
+        <h1>D2 SWAPI</h1>
+      </div>
+      <div class="col-md-4 mt-3">
+        <h5>Status Message:
+          <span id="error-msg" class="text-danger">
+
+          </span>
+        </h5>
+      </div>
+      <div id="buttons" class="col-md-6 offset-md-4 mb-5">
 
       </div>
     </div>
   </header>
+  <main class="container-fluid">
+    <div class="row">
+      <div id="characters" class="col-md-3 mt-3">
+
+      </div>
+      <div id="films" class="col-md-3 mt-3">
+
+      </div>
+      <div id="vehicles" class="col-md-3 mt-3">
+
+      </div>
+      <div id="starships" class="col-md-3 mt-3">
+
+      </div>
+    </div>
+  </main>
 
   <script src="app/main.js" type="module"></script>
 </body>
