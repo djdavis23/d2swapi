@@ -8,12 +8,17 @@ const filmDiv = document.getElementById("films")
 const vehicleDiv = document.getElementById("vehicles")
 const starshipDiv = document.getElementById("starships")
 
+let charTemplate = '<h4>Characters:</h4>'
+let filmTemplate = '<h4>Films:</h4>'
+let vehicleTemplate = '<h4>Vehicles:</h4>'
+let starshipTemplate = '<h4>Starships:</h4>'
+
 function drawButtons() {
   btnDiv.innerHTML = `
     <button class="btn-primary" onclick="app.controllers.swapi.getCharacters()">Get Characters</button>
-    <button class="btn-primary" onclick="app.conroller.swapi.getFilms()">Get Films</button>
-    <button class="btn-primary" onclick="app.conroller.swapi.getVehicles()">Get Vehicles</button>
-    <button class="btn-primary" onclick="app.conroller.swapi.getStarships()">Get Starships</button>
+    <button class="btn-primary" onclick="app.controllers.swapi.getFilms()">Get Films</button>
+    <button class="btn-primary" onclick="app.controllers.swapi.getVehicles()">Get Vehicles</button>
+    <button class="btn-primary" onclick="app.controllers.swapi.getStarships()">Get Starships</button>
   `
 }
 
@@ -23,25 +28,39 @@ function drawError(error) {
 }
 
 function drawCharacters(characters) {
-  let template = ''
   characters.forEach(character => {
-    template += `
-      <p>Name: ${character.name}</p>
+    charTemplate += `
+      <p>${character.name}</p>
     `
   })
-  charDiv.innerHTML = template;
+  charDiv.innerHTML = charTemplate;
 }
 
 function drawFilms(films) {
-  //complete this
+  films.forEach(film => {
+    filmTemplate += `
+      <p>${film.title}</p>
+    `
+  })
+  filmDiv.innerHTML = filmTemplate;
 }
 
 function drawVehicles(vehicles) {
-  //complete this
+  vehicles.forEach(vehicle => {
+    vehicleTemplate += `
+      <p>${vehicle.name}</p>
+    `
+  })
+  vehicleDiv.innerHTML = vehicleTemplate
 }
 
 function drawStarships(starships) {
-  //complete this
+  starships.forEach(starship => {
+    starshipTemplate += `
+      <p>${starship.name}</p>
+    `
+  })
+  starshipDiv.innerHTML = starshipTemplate
 }
 
 

@@ -15,7 +15,6 @@ export default class Person {
     this.vehicles = p.vehicles
     this.starships = p.starships
     this.url = p.url
-
-    this.id = this.url
+    this.id = p.url
   }
 }
