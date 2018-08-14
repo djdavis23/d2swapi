@@ -3,10 +3,10 @@ import Film from "../models/Film.js";
 import Vehicle from "../models/Vehicle.js";
 import Starship from "../models/Starship.js";
 
-let characters = []
-let films = []
-let vehicles = []
-let starships = []
+let characters = {}
+let films = {}
+let vehicles = {}
+let starships = {}
 
 export default class SwapiService {
 
@@ -17,7 +17,8 @@ export default class SwapiService {
       .then(res => res.json())
       .then(data => {
         data.results.map(c => {
-          characters.push(new Person(c))
+          let character = new Person(c)
+          characters[character.id] = character
         })
         drawCharacters(characters)
         if (data.next) {
@@ -34,7 +35,8 @@ export default class SwapiService {
       .then(result => result.json())
       .then(data => {
         data.results.map(f => {
-          films.push(new Film(f))
+          let film = new Film(f)
+          films[film.id] = film
         })
         drawFilms(films)
         if (data.next) {
@@ -52,7 +54,8 @@ export default class SwapiService {
       .then(data => {
         console.log(data)
         data.results.map(v => {
-          vehicles.push(new Vehicle(v))
+          let vehicle = new Vehicle(v)
+          vehicles[vehicle.id] = vehicle
         })
         drawVehicles(vehicles)
         if (data.next) {
@@ -70,7 +73,8 @@ export default class SwapiService {
       .then(data => {
         console.log(data)
         data.results.map(s => {
-          starships.push(new Starship(s))
+          let starship = new Starship(s)
+          starships[starship.id] = starship
         })
         drawStarships(starships)
         if (data.next) {

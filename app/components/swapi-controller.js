@@ -28,7 +28,7 @@ function drawError(error) {
 }
 
 function drawCharacters(characters) {
-  characters.forEach(character => {
+  Object.keys(characters).map(c => characters[c]).forEach(character => {
     charTemplate += `
       <p>${character.name}</p>
     `
@@ -37,27 +37,27 @@ function drawCharacters(characters) {
 }
 
 function drawFilms(films) {
-  films.forEach(film => {
+  Object.keys(films).forEach(id => {
     filmTemplate += `
-      <p>${film.title}</p>
+      <p>${films[id].title}</p>
     `
   })
   filmDiv.innerHTML = filmTemplate;
 }
 
 function drawVehicles(vehicles) {
-  vehicles.forEach(vehicle => {
+  Object.keys(vehicles).forEach(id => {
     vehicleTemplate += `
-      <p>${vehicle.name}</p>
+      <p>${vehicles[id].name}</p>
     `
   })
   vehicleDiv.innerHTML = vehicleTemplate
 }
 
 function drawStarships(starships) {
-  starships.forEach(starship => {
+  Object.keys(starships).forEach(id => {
     starshipTemplate += `
-      <p>${starship.name}</p>
+      <p>${starships[id].name}</p>
     `
   })
   starshipDiv.innerHTML = starshipTemplate
